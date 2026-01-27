@@ -5,6 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import cosine_similarity
 import os 
 
+
 # --- INITIALIZATION ---
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 CORS(app)
