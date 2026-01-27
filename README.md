@@ -22,8 +22,8 @@ A simple web application that recommends music based on song similarity or user 
     * Vanilla JavaScript (with `fetch` for API calls)
 * **Dataset:**
     * Uses a modified Spotify tracks dataset (`tracks_genre.csv`) from Kaggle.
-
 ---
+
 
 ## 🚀 Getting Started
 
