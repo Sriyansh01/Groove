@@ -62,7 +62,7 @@ def get_recommendations_by_song():
 
     first_match = matches.sort_values(by='popularity', ascending=False).iloc[0]
     song_index = first_match.name
-
+  
     query_vec = df_model_scaled.loc[song_index, feature_cols].values.reshape(1, -1)
     all_vecs = df_model_scaled[feature_cols].values
     sim_scores = cosine_similarity(query_vec, all_vecs).flatten()
@@ -85,7 +85,7 @@ def get_recommendations_by_song():
         song['artists'] = song['artists'].replace("'", '"')
 
     return jsonify(recommendations_list)
-
+  
 # ENDPOINT 2: FOR MOOD-BASED RECOMMENDATIONS
 @app.route('/mood', methods=['GET'])
 def get_recommendations_by_mood():
@@ -108,7 +108,7 @@ def get_recommendations_by_mood():
 
     mood_playlist = df_model[mood_filters[mood]]
     top_songs = mood_playlist.sort_values(by='popularity', ascending=False).head(15)
-
+  
     recommendations_list = top_songs.to_dict(orient='records')
     for song in recommendations_list:
         song['artists'] = song['artists'].replace("'", '"')
