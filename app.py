@@ -7,7 +7,8 @@ import os
 
 
 # --- INITIALIZATION ---
-app = Flask(__name__, static_folder='../frontend', static_url_path='')
+# Serve the static files (HTML/CSS/JS) from the project root so the frontend can load correctly.
+app = Flask(__name__, static_folder=os.path.dirname(__file__), static_url_path='')
 CORS(app)
 
 # Declare globals
